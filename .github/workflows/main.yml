@@ -4,10 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Release version (e.g. 1.0.2)'
+        description: 'Release version'
         required: true
         default: '1.0.2'
   push:
+    tags:
+      - "v*"
     branches:
       - "main"
 
