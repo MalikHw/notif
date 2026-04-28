@@ -1,12 +1,15 @@
 # notif api for geometry dash
-check out the <a href="https://forgejo.hlelo.cc/Miskaa/notif/releases">releases page</a><br>
-ALSO check out <a href="https://github.com/miskkaaa/mUtils">mUtils</a><br>
+check out the https://forgejo.hlelo.cc/Miskaa/notif/releases releases page on my friends forgejo page
+ALSO check out mUtils, its on my github :3
+
+If you are not a developer, you dont really need to check this out lol
 
 Enjoy the shitty readme.md file i made when its 11pm/midnight on a school day :3
 
+Look at the forgejo/github page page since im too lazy to make the geode readme better. so enjoy this outdated mess (partially, also its ORIGINALREADME.md on Github)
 ## Usage:
 ### Regular:
-In my notif api, theres something called *customizability* (if youre using fancy ofc), theres also predefined functions if youre lazy<br>
+In my notif api, theres something called *customizability* (if youre using fancy ofc), theres also predefined functions if youre lazy
 ```cpp
 void notif(const std::string& text, const std::string& type = "info");
 void info(const std::string& text);    // info
@@ -15,18 +18,17 @@ void error(const std::string& text);   // error
 void loading(const std::string& text); // loading
 void success(const std::string& text); // success
 ```
-If you are dumb enough to not understand anything, theres ``notifapi::info``, ``notifapi::warn``, ``notifapi::error``, ``notifapi::loading``, ``notifapi::success`` etc.<br>
-I've given out example screenshots in the screenshots section. didnt test out loading tho, but its just a loading bar you see when youre loading online levels<br>
-<h6>theres also notifapi::notif if you want an info notification quickly without doing info, since its predefined in the header file</h6>
+If you are dumb enough to not understand anything, theres ``notifapi::info``, ``notifapi::warn``, ``notifapi::error``, ``notifapi::loading``, ``notifapi::success`` etc. \
+I've given out example screenshots in the screenshots section. didnt test out loading tho, but its just a loading bar you see when youre loading online levels
 
 ### Fancy oooo:
-Yes. there's customizability, shockers.<br>
-Check out the screenshots since i set some examples there.<br>
+Yes. there's customizability, shockers.
+Check out the screenshots since i set some examples there.
 Header file code:
 ```cpp
 void fnotif(const std::string& text, const std::string& type = "info", float time = 3.0f, cocos2d::ccColor3B accentColor = {0, 0, 0}, float scale = 1.0f, Position position = Position::TopRight, Animation animation = Animation::Slide, const std::string& customSound = "");
 ```
-Again, if you're dumb, its basically ``notifapi::fnotif(example1, "info", 3.0f, cocos2d::ccColor3B{50, 125, 255}, 1.0f, notifapi::Position::TopRight, notifapi::Animation::Slide, "");`` (example)<br>
+Again, if you're dumb, its basically ``notifapi::fnotif(example1, "info", 3.0f, cocos2d::ccColor3B{50, 125, 255}, 1.0f, notifapi::Position::TopRight, notifapi::Animation::Slide, "");``
 ```cpp
 notifapi::fnotif(example1, "info", 3.0f, cocos2d::ccColor3B{50, 125, 255}, 1.0f, notifapi::Position::TopRight, notifapi::Animation::Slide, "");
 
@@ -44,47 +46,8 @@ notifapi::fnotif("Hello from notif!", "info", 3.0f, cocos2d::ccColor3B{50, 125, 
 */
 
 // the last 1.0f is the scale, so it can be 0.5f (smaller), 1.5f (bigger), 2.0f (huge) etc.
-
-/*
- notifapi::Position is any position
- ahem...
-             case Position::TopRight:
-                targetPos = cocos2d::CCPoint(winSize.width - size.width - margin, winSize.height - size.height - margin);
-                startPos = cocos2d::CCPoint(winSize.width + 50, targetPos.y);
-                break;
-            case Position::TopLeft:
-                targetPos = cocos2d::CCPoint(margin, winSize.height - size.height - margin);
-                startPos = cocos2d::CCPoint(-50, targetPos.y);
-                break;
-            case Position::BottomRight:
-                targetPos = cocos2d::CCPoint(winSize.width - size.width - margin, margin);
-                startPos = cocos2d::CCPoint(winSize.width + 50, targetPos.y);
-                break;
-            case Position::BottomLeft:
-                targetPos = cocos2d::CCPoint(margin, margin);
-                startPos = cocos2d::CCPoint(-50, targetPos.y);
-                break;
-            case Position::TopCenter:
-                targetPos = cocos2d::CCPoint(winSize.width/2 - size.width/2, winSize.height - size.height - margin);
-                startPos = cocos2d::CCPoint(targetPos.x, winSize.height + 50);
-                break;
-            case Position::BottomCenter:
-                targetPos = cocos2d::CCPoint(winSize.width/2 - size.width/2, margin);
-                startPos = cocos2d::CCPoint(targetPos.x, -50);
-                break;
-            case Position::Center:
-                targetPos = cocos2d::CCPoint(winSize.width/2 - size.width/2, winSize.height/2 - size.height/2);
-                startPos = targetPos;
-                break;
-  thats stolen from the source code ^^^^^^
-  theres these yeah
-*/
-
-/*
-  theres also animations but Slide, Elastic and None work only, sad 3:
-*/
 ```
-Also, since i included my <a href="https://github.com/miskkaaa/mUtils">mUtils</a> project into here. you can do this:
+Also, since i included my mUtils project into here. you can do this:
 ```cpp
 mutils::DelayedTask::wait(5.0f, []() {
     notifapi::warn("this is a warning, be scared, something went wrong OwO");
@@ -93,21 +56,21 @@ mutils::DelayedTask::wait(5.0f, []() {
 All you really need to know is: ``5.0f`` is the time
 
 ### Including etc.
-To include <a href="https://github.com/miskkaaa/mUtils">mUtils</a>, you can git clone the repo, or just copy this entire repository as it is right now \
+To include mUtils, you can git clone the repo, or just copy this entire repository as it is right now \
 Then, in your source file:
 ```cpp
 #include "includes/mutils/index.hpp"
 ```
 the ``"includes/mutils"`` path can be anywhere, as long it contains the ``index.hpp`` file and ``qol``, ``string``, ``ui`` folders \
-<br>
+
 To include the notif file, you either put
 ```json
   "dependencies": {
     "geode.node-ids": ">=v1.23.3",
-    "miskaa.notif": ">=1.0.1",
+    "miskaa.notif": ">=1.0.0",
   }
 ```
-in your mod.json file (not supported)\
+in your mod.json file (not supported) \
 **OR:**
 1. clone this repository
 2. copy the ``src/`` folder into like ``include/notif`` in your geode mod
@@ -115,7 +78,7 @@ in your mod.json file (not supported)\
 ```cpp
 #include "includes/notif/includes/notif.hpp"
 ```
-<h6>or anywhere where notif.hpp is at</h6>
+or anywhere where notif.hpp is at
 
 ### Using mUtils and notif
 First, you have to copy everything (git clone the repo), with the steps above (Including etc.) \
@@ -137,34 +100,4 @@ mutils::DelayedTask::wait(5.0f, []() {
 ```
 
 ## Screenshots:
-### Info example:
-```cpp
-notifapi::info(example1)
-// OR
-notifapi::fnotif(example1, "info", 3.0f, cocos2d::ccColor3B{50, 125, 255}, 1.0f);
-```
-<img src="screenshots/s1.png" alt="info">
-
-### Successs example:
-```cpp
-notifapi::success(example2);
-// OR
-notifapi::fnotif(example2, "success", 3.0f, cocos2d::ccColor3B{50, 255, 50}, 1.0f);
-```
-<img src="screenshots/s2.png" alt="info">
-
-### Warning example:
-```cpp
-notifapi::warn(example3);
-// OR
-notifapi::fnotif(example3, "warn", 3.0f, cocos2d::ccColor3B{255, 200, 50}, 1.0f);
-```
-<img src="screenshots/s3.png" alt="info">
-
-### Error example:
-```cpp
-notifapi::error(example4);
-// OR
-notifapi::fnotif(example4, "error", 3.0f, cocos2d::ccColor3B{255, 50, 50}, 1.0f);
-```
-<img src="screenshots/s4.png" alt="info">
+no screenshots since geode will not do what i want it to do 3:
