@@ -1,8 +1,8 @@
 ## 1.0.3
 - Fix several issues that geode sdk lead devs/reviewers whatever told me to such as:
-  - fixing the crash on non-ascii user paths
+  - fixing the crash on non-ascii user paths **WILL come soon on 1.0.4**
   - sfx volume customization
-  - queue
+  - queue/cooldown
 
 ## 1.0.2
 - Migration to github
