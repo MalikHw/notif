@@ -144,7 +144,7 @@ notifapi::info(example1)
 // OR
 notifapi::fnotif(example1, "info", 3.0f, cocos2d::ccColor3B{50, 125, 255}, 1.0f);
 ```
-<img src="screenshots/s1.png" alt="info">
+![info](https://forgejo.hlelo.cc/Miskaa/notif/raw/branch/main/screenshots/s1.png)
 
 ### Successs example:
 ```cpp
@@ -152,7 +152,7 @@ notifapi::success(example2);
 // OR
 notifapi::fnotif(example2, "success", 3.0f, cocos2d::ccColor3B{50, 255, 50}, 1.0f);
 ```
-<img src="screenshots/s2.png" alt="info">
+![success](https://forgejo.hlelo.cc/Miskaa/notif/raw/branch/main/screenshots/s2.png)
 
 ### Warning example:
 ```cpp
@@ -160,7 +160,7 @@ notifapi::warn(example3);
 // OR
 notifapi::fnotif(example3, "warn", 3.0f, cocos2d::ccColor3B{255, 200, 50}, 1.0f);
 ```
-<img src="screenshots/s3.png" alt="info">
+![warning](https://forgejo.hlelo.cc/Miskaa/notif/raw/branch/main/screenshots/s3.png)
 
 ### Error example:
 ```cpp
@@ -168,4 +168,4 @@ notifapi::error(example4);
 // OR
 notifapi::fnotif(example4, "error", 3.0f, cocos2d::ccColor3B{255, 50, 50}, 1.0f);
 ```
-<img src="screenshots/s4.png" alt="info">
+![error](https://forgejo.hlelo.cc/Miskaa/notif/raw/branch/main/screenshots/s4.png)
