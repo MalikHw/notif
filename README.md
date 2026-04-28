@@ -1,6 +1,7 @@
 # notif api for geometry dash
-check out the <a href="https://forgejo.hlelo.cc/Miskaa/notif/releases">releases page</a><br>
-ALSO check out <a href="https://github.com/miskkaaa/mUtils">mUtils</a><br>
+check out the https://forgejo.hlelo.cc/Miskaa/notif/releases (releases page) \
+
+Also, over at https://forgejo.hlelo.cc/Miskaa/notif is the original source code with all the original commits, i need to migrate onto here since "local build; please use github actions." -- someone who reviewed my code
 
 Enjoy the shitty readme.md file i made when its 11pm/midnight on a school day :3
 
