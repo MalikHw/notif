@@ -1,3 +1,8 @@
+## 1.0.3-beta.2
+- fix crashes happening on non-ascii user paths
+- remove queue because it doesnt work
+- i can just remove the string and ui folders from mUtils but im too lazy
+
 ## 1.0.3
 - Fix several issues that geode sdk lead devs/reviewers whatever told me to such as:
   - [ ] fixing the crash on non-ascii user paths **WILL come soon on 1.0.4**
