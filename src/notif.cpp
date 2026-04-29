@@ -166,7 +166,7 @@ namespace notifapi {
         }
         
         this->setPosition(startPos);
-        overlay->addChild(this, 9000);
+        overlay->addChild(this); // noi hard code z order
         
         // sound system/notification
         auto fmod = FMODAudioEngine::sharedEngine();
