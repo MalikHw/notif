@@ -1,3 +1,7 @@
+## 1.0.3-beta.6
+- fix main.yml
+- sorry erymanthus for saying that the main.yml file at .github/workflows was ai generated (i was very lazy to do that + the only thing i know about yaml is minecraft plugins)
+
 ## 1.0.3-beta.5
 - add some shit that i needed to add
 
