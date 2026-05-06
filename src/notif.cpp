@@ -125,7 +125,7 @@ namespace notifapi {
 
         // overlay manager since geode needs it
         auto overlay = geode::OverlayManager::get();
-        if (!overlay) return;
+        // if (!overlay) return;
         
         auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
         auto size = this->getContentSize();
@@ -166,14 +166,16 @@ namespace notifapi {
         }
         
         this->setPosition(startPos);
-        overlay->addChild(this); // noi hard code z order
+        overlay->addChild(this);
         
         // sound system/notification
         auto fmod = FMODAudioEngine::sharedEngine();
         if (fmod && fmod->getEffectsVolume() > 0.0f) {
             float finalVolume = m_volume * fmod->getEffectsVolume();
             if (!m_customSound.empty()) {
-                fmod->playEffect(m_customSound.c_str(), 1.0f, 1.0f, finalVolume);
+                std::error_code ec; //thank you ery
+                if (std::filesystem::exists(m_customSound, ec))
+                    fmod->playEffect(m_customSound.c_str(), 1.0f, 1.0f, finalVolume);
             } else {
                 auto sound = geode::Mod::get()->getResourcesDir() / "notif.ogg";
                 fmod->playEffect(utils::string::pathToString(sound).c_str(), 1.0f, 1.0f, finalVolume);
@@ -245,11 +247,7 @@ namespace notifapi {
     }
     
     void notif::hide() {
-        destroyed();
         this->removeFromParent();
-    }
-    
-    void notif::destroyed() {
     }
     
     void fnotif(const std::string& text, const std::string& type, float time, cocos2d::ccColor3B accentColor, float scale, Position position, Animation animation, const std::string& customSound, float volume) {
