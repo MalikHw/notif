@@ -1,3 +1,7 @@
+## 1.0.4
+- welcome to the index, my friend
+- aagain fix mod.json
+
 ## 1.0.3-beta.7
 - fix mod dot jay son
 
