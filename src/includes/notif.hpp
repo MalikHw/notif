@@ -3,6 +3,12 @@
 #include <Geode/Geode.hpp>
 #include <Geode/ui/Notification.hpp>
 
+#ifdef NOTIF_API_EXPORT
+    #define NOTIF_API [[gnu::dllexport]]
+#else
+    #define NOTIF_API [[gnu::dllimport]]
+#endif
+
 namespace notifapi {
     class notif;
     
@@ -25,15 +31,15 @@ namespace notifapi {
         None
     };
     
-    void notify(const std::string& text, const std::string& type = "info");
+    NOTIF_API void notify(const std::string& text, const std::string& type = "info");
     
-    void info(const std::string& text);    // info
-    void warn(const std::string& text);    // warning  
-    void error(const std::string& text);   // error
-    void loading(const std::string& text); // loading
-    void success(const std::string& text); // success
+    NOTIF_API void info(const std::string& text);    // info
+    NOTIF_API void warn(const std::string& text);    // warning  
+    NOTIF_API void error(const std::string& text);   // error
+    NOTIF_API void loading(const std::string& text); // loading
+    NOTIF_API void success(const std::string& text); // success
     
-    class notif : public cocos2d::CCNodeRGBA {
+    class NOTIF_API notif : public cocos2d::CCNodeRGBA {
     protected:
         float m_time = 2.0f;
         float m_scale = 1.0f;
@@ -50,5 +56,5 @@ namespace notifapi {
     };
     
     // fancyness
-    void fnotif(const std::string& text, const std::string& type = "info", float time = 3.0f, cocos2d::ccColor3B accentColor = {0, 0, 0}, float scale = 1.0f, Position position = Position::TopRight, Animation animation = Animation::Slide, const std::string& customSound = "", float volume = 1.0f);
+    NOTIF_API void fnotif(const std::string& text, const std::string& type = "info", float time = 3.0f, cocos2d::ccColor3B accentColor = {0, 0, 0}, float scale = 1.0f, Position position = Position::TopRight, Animation animation = Animation::Slide, const std::string& customSound = "", float volume = 1.0f);
 }
