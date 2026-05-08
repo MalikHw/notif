@@ -1,3 +1,6 @@
+## 1.0.4-beta.1
+- fix dll imports/exports apparentall
+
 ## 1.0.4
 - welcome to the index, my friend
 - aagain fix mod.json
