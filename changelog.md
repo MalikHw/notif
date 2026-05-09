@@ -1,3 +1,6 @@
+## 1.0.4-beta.2
+- fix even more dll imports/exports so other mods can actually use this
+
 ## 1.0.4-beta.1
 - fix dll imports/exports apparentall
 

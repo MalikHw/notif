@@ -3,10 +3,14 @@
 #include <Geode/Geode.hpp>
 #include <Geode/ui/Notification.hpp>
 
-#ifdef NOTIF_API_EXPORT
-    #define NOTIF_API [[gnu::dllexport]]
+#ifdef GEODE_IS_WINDOWS
+    #ifdef NOTIF_EXPORTS
+        #define NOTIF_API __declspec(dllexport)
+    #else
+        #define NOTIF_API __declspec(dllimport)
+    #endif
 #else
-    #define NOTIF_API [[gnu::dllimport]]
+    #define NOTIF_API __attribute__((visibility("default")))
 #endif
 
 namespace notifapi {
