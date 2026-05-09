@@ -4,7 +4,7 @@
 #include <Geode/ui/Notification.hpp>
 
 #ifdef GEODE_IS_WINDOWS
-    #ifdef NOTIF_EXPORTS
+    #ifdef notif_EXPORTS
         #define NOTIF_API __declspec(dllexport)
     #else
         #define NOTIF_API __declspec(dllimport)
