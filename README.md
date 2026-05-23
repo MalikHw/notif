@@ -25,9 +25,10 @@ I've given out example screenshots in the screenshots section. didnt test out lo
 ### Fancy oooo:
 Yes. there's customizability, shockers.
 Check out the screenshots since i set some examples there.
+
 Header file code:
 ```cpp
-void fnotif(const std::string& text, const std::string& type = "info", float time = 3.0f, cocos2d::ccColor3B accentColor = {0, 0, 0}, float scale = 1.0f, Position position = Position::TopRight, Animation animation = Animation::Slide, const std::string& customSound = "", float volume = 1.0f);
+void fnotif(const std::string& text, const std::string& type = "info", float time = 3.0f, cocos2d::ccColor3B accentColor = {0, 0, 0}, float scale = 1.0f, Position position = Position::TopRight, Animation animation = Animation::Slide, const std::string& customSound = "", float volume = 1.0f, cocos2d::CCNode* customIcon = nullptr);
 ```
 Again, if you're dumb, its basically ``notifapi::fnotif(example1, "info", 3.0f, cocos2d::ccColor3B{50, 125, 255}, 1.0f, notifapi::Position::TopRight, notifapi::Animation::Slide, "", 0.8f)``
 ```cpp
@@ -49,6 +50,11 @@ notifapi::fnotif("Hello from notif!", "info", 3.0f, cocos2d::ccColor3B{50, 125, 
 // last 1.0f is scale, so it can be 0.5f (smaller), 1.5f (bigger), 2.0f (huge) etc.
 // final 0.8f is volume, so it can be 0.0f (silent), 0.5f (quiet), 1.0f (max) etc.
 // volume respects game sound fx settings, so if game effects sounds are muted, notification sound will be muted too
+
+// customIcon: pass any CCNode* to use a custom icon from outside resources, auto-resized to 116x116
+// pass nullptr (or just omit it) to use the default type icon
+auto myIcon = cocos2d::CCSprite::create(Mod::get()->getResourcesDir() / "your-icon.png");
+notifapi::fnotif("Hello from notif!", "info", 3.0f, cocos2d::ccColor3B{50, 125, 255}, 1.0f, notifapi::Position::TopRight, notifapi::Animation::Slide, "", 1.0f, myIcon);
 ```
 Also, since i included my mUtils project into here. you can do this:
 ```cpp
@@ -103,4 +109,8 @@ mutils::DelayedTask::wait(5.0f, []() {
 ```
 
 ## Screenshots:
-no screenshots since geode will not do what i want it to do 3:
+![s1](screenshots/s1.png)
+![s2](screenshots/s2.png)
+![s3](screenshots/s3.png)
+![s4](screenshots/s4.png)
+![s1](screenshots/s5.png)
