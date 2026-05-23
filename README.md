@@ -25,6 +25,7 @@ I've given out example screenshots in the screenshots section. didnt test out lo
 ### Fancy oooo:
 Yes. there's customizability, shockers.
 Check out the screenshots since i set some examples there.
+
 Header file code:
 ```cpp
 void fnotif(const std::string& text, const std::string& type = "info", float time = 3.0f, cocos2d::ccColor3B accentColor = {0, 0, 0}, float scale = 1.0f, Position position = Position::TopRight, Animation animation = Animation::Slide, const std::string& customSound = "", float volume = 1.0f, cocos2d::CCNode* customIcon = nullptr);
@@ -108,4 +109,8 @@ mutils::DelayedTask::wait(5.0f, []() {
 ```
 
 ## Screenshots:
-no screenshots since geode will not do what i want it to do 3:
+![s1](screenshots/s1.png)
+![s2](screenshots/s2.png)
+![s3](screenshots/s3.png)
+![s4](screenshots/s4.png)
+![s1](screenshots/s5.png)
