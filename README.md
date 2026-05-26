@@ -28,7 +28,7 @@ Check out the screenshots since i set some examples there.
 
 Header file code:
 ```cpp
-void fnotif(const std::string& text, const std::string& type = "info", float time = 3.0f, cocos2d::ccColor3B accentColor = {0, 0, 0}, float scale = 1.0f, Position position = Position::TopRight, Animation animation = Animation::Slide, const std::string& customSound = "", float volume = 1.0f, cocos2d::CCNode* customIcon = nullptr);
+void fnotif(const std::string& text, const std::string& type = "info", float time = 3.0f, cocos2d::ccColor3B accentColor = {0, 0, 0}, float scale = 1.0f, Position position = Position::TopRight, Animation animation = Animation::Slide, const std::string& customSound = "", float volume = 1.0f, cocos2d::CCNode* customIcon = nullptr, bool blur = true, int blurPasses = 1);
 ```
 Again, if you're dumb, its basically ``notifapi::fnotif(example1, "info", 3.0f, cocos2d::ccColor3B{50, 125, 255}, 1.0f, notifapi::Position::TopRight, notifapi::Animation::Slide, "", 0.8f)``
 ```cpp
@@ -55,6 +55,11 @@ notifapi::fnotif("Hello from notif!", "info", 3.0f, cocos2d::ccColor3B{50, 125, 
 // pass nullptr (or just omit it) to use the default type icon
 auto myIcon = cocos2d::CCSprite::create(Mod::get()->getResourcesDir() / "your-icon.png");
 notifapi::fnotif("Hello from notif!", "info", 3.0f, cocos2d::ccColor3B{50, 125, 255}, 1.0f, notifapi::Position::TopRight, notifapi::Animation::Slide, "", 1.0f, myIcon);
+
+// blur: pass false to disable blur for this notification, defaults to true
+// blurPasses: controls blur intensity, ignored if blur=false...
+notifapi::fnotif("Hello from notif!", "info", 3.0f, {0,0,0}, 1.0f, notifapi::Position::TopRight, notifapi::Animation::Slide, "", 1.0f, nullptr, false); // no blur
+notifapi::fnotif("Hello from notif!", "info", 3.0f, {0,0,0}, 1.0f, notifapi::Position::TopRight, notifapi::Animation::Slide, "", 1.0f, nullptr, true, 3); // blur with 3 passes
 ```
 Also, since i included my mUtils project into here. you can do this:
 ```cpp
